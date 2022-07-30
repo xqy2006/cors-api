@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
+# 跨域请求API 
 
-You can use the [editor on GitHub](https://github.com/xqy2006/cors-api/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+① 请求方式：GET/POST（HTTP/HTTPS）
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+② 请求地址：https://xqy2006-cors.azurewebsites.net/api/cors
 
-### Markdown
+③ 请求参数：
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+| 参数名  | 位置       | 类型   | 必填 | 说明                                                  |
+| :------ | :--------- | :----- | :--: | :---------------------------------------------------- |
+| url     | body/query | string |  是  | 说明：要跨域请求的API的地址                           |
+| method  | body/query | string |  否  | 说明：要跨域请求的API的方法                           |
+| headers | body/query | string |  否  | 说明：要跨域请求的API的Headers，为json的string形式    |
+| params  | body/query | string |  否  | 说明：要跨域请求的API的params参数，为json的string形式 |
+| data    | body/query | string |  否  | 说明：要跨域请求的API的data参数，为json的string形式   |
+| timeout | body/query | string |  否  | 说明：超时时间（单位：毫秒）                          |
 
-```markdown
-Syntax highlighted code block
+④请求参数范例：
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
+{
+    "url": "https://www.baidu.com",
+    "method": "get",
+    "headers": "{"Content-Type": "application/json"}",
+    "params": "{"param1": "abc", "param2": "abc"}",
+    "data": "{"data1": "abc", "data2": "abc"}",
+    "timeout": 1000,
+}
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/xqy2006/cors-api/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```
